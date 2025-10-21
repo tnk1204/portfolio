@@ -30,6 +30,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ project, onClose }) => 
                 src={project.imageUrl} 
                 alt={project.title} 
                 className="block max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                loading="eager"
             />
         </div>
     </div>

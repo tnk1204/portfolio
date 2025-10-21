@@ -69,7 +69,7 @@ function App() {
   };
 
   return (
-    <div className="bg-light-bg font-sans">
+    <div className="bg-white font-sans">
       <Header />
       <main>
         <Hero />
