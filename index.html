@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trương Nhựt Khương - Graphic Designer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'brand-primary': '#F97316', // Orange 500
+              'brand-secondary': '#FBBF24', // Amber 400 (Warm Yellow)
+              'light-bg': '#FFFBF5', // Creamy White
+              'light-card': '#FFFFFF',
+              'light-text': '#1F2937', // Gray 800
+              'light-text-secondary': '#6B7280', // Gray 500
+              'amber': {
+                100: '#FEF3C7',
+                800: '#92400E',
+              },
+              'orange': {
+                600: '#EA580C',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+              'reveal-text': 'revealText 1.s cubic-bezier(0.77, 0, 0.175, 1) forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              fadeInUp: {
+                '0%': { opacity: 0, transform: 'translateY(20px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+              revealText: {
+                '0%': {
+                    transform: 'translateY(100%)',
+                },
+                '100%': {
+                    transform: 'translateY(0)',
+                },
+              },
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+  <style>
+    /* Custom Cursor Styles */
+    body {
+      cursor: none;
+    }
+    .custom-cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background-color: #F97316;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      transition: width 0.3s, height 0.3s;
+    }
+    .custom-cursor-outline {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #F97316;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      transition: transform 0.2s, opacity 0.3s, background-color 0.3s;
+    }
+     .cursor-hover .custom-cursor-dot {
+      width: 0;
+      height: 0;
+    }
+    .cursor-hover .custom-cursor-outline {
+      transform: translate(-50%, -50%) scale(1.5);
+      background-color: rgba(249, 115, 22, 0.2);
+    }
+    
+    /* Scroll Animation Styles */
+    .scroll-animate {
+      opacity: 0;
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .scroll-animate-up {
+      transform: translateY(30px);
+    }
+    .scroll-animate-left {
+      transform: translateX(-30px);
+    }
+    .scroll-animate-right {
+      transform: translateX(30px);
+    }
+    .scroll-animate.is-visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    
+    /* Image Download Protection */
+    img {
+      -webkit-user-drag: none; /* Safari */
+      user-drag: none; /* Firefox, etc. */
+      -moz-user-select: none; /* Firefox */
+      -webkit-user-select: none; /* Safari, Chrome */
+      -ms-user-select: none; /* IE10+ */
+      user-select: none;
+    }
+  </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-light-bg text-light-text antialiased">
+    <div id="root"></div>
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-outline"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
