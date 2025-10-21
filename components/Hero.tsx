@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
         <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-brand-secondary rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       
         <div className="container mx-auto px-6 text-center relative z-10">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-light-text mb-4 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-light-text mb-4 leading-tight whitespace-nowrap">
               {name.split("").map((char, index) => (
                 <span key={index} className="inline-block overflow-hidden">
                   <span className="inline-block animate-reveal-text" style={{ animationDelay: `${index * 50}ms` }}>
