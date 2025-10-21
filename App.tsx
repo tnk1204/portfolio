@@ -19,6 +19,11 @@ function App() {
   const contactRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Chỉ kích hoạt custom cursor trên desktop để tránh lỗi trên mobile
+    const isDesktop = window.innerWidth > 768; // 768px là breakpoint chung cho mobile
+
+    if (!isDesktop) return; // Không add listeners trên mobile
+
     const dot = document.querySelector('.custom-cursor-dot') as HTMLElement;
     const outline = document.querySelector('.custom-cursor-outline') as HTMLElement;
 
